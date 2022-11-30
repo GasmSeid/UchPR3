@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПРАКТИЧЕСКАЯ РАБОТА №3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body style="background: #5CDB95">
+<h2>Редактирование данных сотрудника</h2>
+<div th:each="el : ${Manager}">
+    <form  method="post">
+        <input type="text" th:value="${el.getSurname()}" name="surname" placeholder="Фамилия"><br> <br>
+        <input type="text" th:value="${el.getName()}" name="name" placeholder="Имя"><br> <br>
+        <input type="text" th:value="${el.getMiddlename()}" name="middlename" placeholder="Отчество"><br> <br>
+        <input type="date" th:value="${el.getBthday()}" name="bthday" placeholder="Дата рождения"><br> <br>
+        <input type="text" th:value="${el.getSeriaPass()}" name="SeriaPass" placeholder="Серия паспорта"><br> <br>
+        <input type="text" th:value="${el.getNomPass()}" name="NomPass" placeholder="Номер паспорта"><br> <br>
+        <input type="text" th:value="${el.getAdresReg()}" name="AdresReg" placeholder="Адрес регистрации"><br> <br>
+        <input type="text" th:value="${el.getEmail()}" name="Email" placeholder="Email"><br> <br>
+        <form>
+            <button type="submit" style="background: #379683"> Изменить данные сотрудника</button>
+        </form>
+    </form>
+</div>
+</body>
+</html>
